@@ -376,16 +376,6 @@ a {
 
 /* -------------------------HERO-mobile-------------------- */
 
-@media screen and (min-resolution: 2x) {
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url("../images/hero-mobile@2x.jpg");
-  }
-}
-
 .hero {
   padding: 72px 0;
   background-color: #2e2f42;
@@ -400,6 +390,13 @@ a {
   margin: 0 auto;
 }
 
+@media screen and (min-resolution: 2x) {
+  .hero {
+    background-image: image-set(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url("../images/hero-mobile@2x.jpg");
+  }
+}
+
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -408,7 +405,7 @@ a {
 }
 
 .hero-title {
-  max-width: 320px;
+  max-width: 216px;
   margin: 0 auto;
   font-weight: 700;
   font-size: 36px;
@@ -441,16 +438,6 @@ a {
 
 /* -----------hero-tablet-768px----------- */
 
-@media screen and (min-width: 768px) and (min-resolution: 2x) {
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url("../images/hero-tablet@2x.jpg");
-  }
-}
-
 @media screen and (min-width: 768px) {
   .hero {
     background-image: linear-gradient(
@@ -458,6 +445,18 @@ a {
         rgba(46, 47, 66, 0.7)
       ),
       url("../images/hero-tablet.jpg");
+    padding: 112px 0;
+  }
+}
+
+  @media screen and (min-width: 768px) and (min-resolution: 2x) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url("../images/hero-tablet@2x.jpg");
+    }
   }
 
   .hero-container {
@@ -473,16 +472,6 @@ a {
 
 /* -----------hero-desktop-1158px ----------- */
 
-@media screen and (min-width: 1158px) and (min-resolution: 2x) {
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url("../images/hero-desktop@2x.jpg");
-  }
-}
-
 @media screen and (min-width: 1158px) {
   .hero {
     padding: 188px 0;
@@ -492,6 +481,13 @@ a {
         rgba(46, 47, 66, 0.7)
       ),
       url("../images/hero-desktop.jpg");
+  }
+
+  @media screen and (min-width: 1158px) and (min-resolution: 2x) {
+    .hero {
+      background-image: image-set(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/hero-desktop@2x.jpg");
+    }
   }
 
   .hero-container {
@@ -841,20 +837,15 @@ a {
 
 /* -------------------------FOOTER mobile-first-------------------- */
 .page-footer {
-  padding: 96px 0; /* Мобільний відступ - менше ніж десктопний */
+  padding: 96px 0;
   background-color: #2e2f42;
 }
 
 .page-footer .container {
   display: flex;
-  flex-direction: column; /* Мобільна версія - всі блоки вертикально */
-  gap: 72px; /* Відступ між блоками */
-  text-align: center; /* Центруємо текст на мобільному */
-}
-
-/* Логотип та опис */
-.footer-info {
-  /* margin-right прибираємо - він тільки для десктопа */
+  flex-direction: column;
+  gap: 72px;
+  text-align: center;
 }
 
 .footer-logo {
@@ -872,13 +863,10 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--footer-text-color);
-  margin: 0 auto; /* Центруємо текст блок на мобільному */
+  text-align: left;
 }
 
 /* ------------------social FOOTER-------------------- */
-.footer-socials {
-  /* flex-direction: column та gap прибираємо - вони не потрібні */
-}
 
 .social-title-footer {
   font-weight: 500;
@@ -891,7 +879,7 @@ a {
 
 .social-list-footer {
   display: flex;
-  justify-content: center; /* Центруємо соціальні іконки */
+  justify-content: center;
   gap: 16px;
 }
 
@@ -1038,20 +1026,47 @@ a {
     padding: 100px 0;
   }
 
+  .page-footer {
+    padding: 100px 0;
+    background-color: #2e2f42;
+  }
+
   .page-footer .container {
-    flex-wrap: nowrap; /* Всі блоки в одному ряду */
-    gap: 0; /* Прибираємо gap, використовуємо margin */
+    display: flex;
     align-items: baseline;
-    max-width: none; /* Прибираємо обмеження ширини */
   }
 
   .footer-info {
     margin-right: 120px;
-    margin-left: 156px;
   }
+
+  .footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .footer-text {
+    max-width: 264px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--footer-text-color);
+  }
+  .page-footer .container {
+    flex-wrap: wrap;
+    gap: 0;
+    align-items: baseline;
+    max-width: none;
+  }
+
+  .footer-info {
+    margin-right: 120px;
+  }
+
   .footer-text {
     margin: 0;
   }
+
   .subscribe-footer {
     margin-left: 80px;
   }
